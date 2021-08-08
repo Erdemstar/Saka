@@ -1,0 +1,172 @@
+﻿.stretch-card > .card {
+    width: 100%;
+    min-width: 100%
+}
+
+body {
+    background-color: #f9f9fa
+}
+
+.flex {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto
+}
+
+@media (max-width:991.98px) {
+    .padding {
+        padding: 1.5rem
+    }
+}
+
+@media (max-width:767.98px) {
+    .padding {
+        padding: 1rem
+    }
+}
+
+.padding {
+    padding: 3rem
+}
+
+.card {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #3da5f;
+    border-radius: 0
+}
+
+    .card .card-body {
+        padding: 1.25rem 1.75rem
+    }
+
+    .card .card-title {
+        color: #000000;
+        margin-bottom: 0.625rem;
+        text-transform: capitalize;
+        font-size: 0.875rem;
+        font-weight: 500
+    }
+
+    .card .card-description {
+        margin-bottom: .875rem;
+        font-weight: 400;
+        color: #76838f
+    }
+
+.btn.btn-social-icon {
+    width: 50px;
+    height: 50px;
+    padding: 0
+}
+
+.template-demo > .btn {
+    margin-right: 0.5rem !important
+}
+
+.template-demo {
+    margin-top: 0.5rem !important
+}
+
+.btn.btn-rounded {
+    border-radius: 50px
+}
+
+.btn-outline-github {
+    border: 1px solid black;
+    color: black
+}
+
+    .btn-outline-github:hover {
+        background: black;
+        color: #ffffff
+    }
+
+.btn-outline-facebook {
+    border: 1px solid #3b579d;
+    color: #3b579d
+}
+
+    .btn-outline-facebook:hover {
+        background: #3b579d;
+        color: #ffffff
+    }
+
+.btn-outline-youtube {
+    border: 1px solid #e52d27;
+    color: #e52d27
+}
+
+.btn-outline-twitter {
+    border: 1px solid #2caae1;
+    color: #2caae1
+}
+
+.btn-outline-linkedin {
+    border: 1px solid #0177b5;
+    color: #0177b5
+}
+
+
+.btn-outline-instagram {
+    border: 1px solid #dc4a38;
+    color: #dc4a38
+}
+
+.btn-outline-twitter:hover {
+    background: #2caae1;
+    color: #ffffff
+}
+
+.btn-outline-linkedin:hover {
+    background: #0177b5;
+    color: #ffffff
+}
+
+.btn-outline-youtube:hover {
+    background: #e52d27;
+    color: #ffffff
+}
+
+.btn-outline-instagram:hover {
+    background: #e52d27;
+    color: #ffffff
+}
+
+.btn-facebook {
+    background: #3b579d;
+    color: #ffffff
+}
+
+.btn-youtube {
+    background: #e52d27;
+    color: #ffffff
+}
+
+.btn-twitter {
+    background: #2caae1;
+    color: #ffffff
+}
+
+
+.btn-linkedin {
+    background: #0177b5;
+    color: #ffffff
+}
+
+.btn-instagram {
+    background: #dc4a38;
+    color: #ffffff
+}

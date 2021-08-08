@@ -1,0 +1,28 @@
+Merhaba Savaşçı bugün senden beklediğimiz  uygulamayı amacı dışında
+kullanman olacaktır. Aşağıdaki butona tıklayarak seni hızlıca ilgili sayfaya yönlendirebiliriz. Çalışmaların esnasında takıldığın
+yerler olması durumunda sana yardımcı olabilmek için 3 tane ipucu bıraktık. İyi şanslar
+
+[reflected-xss-input]
+Merhaba Savaşçı bugün senden beklediğimiz isim girilen alana beklenmeyen değerler girerek uygulamayı amacı dışında
+kullanman olacaktır. Aşağıdaki butona tıklayarak seni hızlıca ilgili sayfaya yönlendirebiliriz. Çalışmaların esnasında takıldığın
+yerler olması durumunda sana yardımcı olabilmek için 3 tane ipucu bıraktık. İyi şanslar
+
+[reflected-xss-tag-attribute]
+Merhaba Savaşçı bugün senden beklediğimiz fotoğraf adresi girilen alana beklenmeyen değerler girerek uygulamayı amacı dışında
+kullanman olacaktır. Aşağıdaki butona tıklayarak seni hızlıca ilgili sayfaya yönlendirebiliriz. Çalışmaların esnasında takıldığın
+yerler olması durumunda sana yardımcı olabilmek için 3 tane ipucu bıraktık. İyi şanslar
+
+[reflected-xss-tag-attribute-href]
+Merhaba Savaşçı bugün senden beklediğimiz gidilmek istenilen adresin yazıldığı alana beklenmeyen değerler girerek uygulamayı amacı dışında
+kullanman olacaktır. Aşağıdaki butona tıklayarak seni hızlıca ilgili sayfaya yönlendirebiliriz. Çalışmaların esnasında takıldığın
+yerler olması durumunda sana yardımcı olabilmek için 3 tane ipucu bıraktık. İyi şanslar
+
+[reflected-xss-js-variable]
+Merhaba Savaşçı bugün senden beklediğimiz isim girilen alana beklenmeyen değerler girerek uygulamayı amacı dışında
+kullanman olacaktır. Aşağıdaki butona tıklayarak seni hızlıca ilgili sayfaya yönlendirebiliriz. Çalışmaların esnasında takıldığın
+yerler olması durumunda sana yardımcı olabilmek için 3 tane ipucu bıraktık. İyi şanslar
+
+[reflected-xss-input]
+Merhaba Savaşçı bugün senden beklediğimiz giden istekler içerisindeki değerlerle oynayarak uygulamayı amacı dışında
+kullanman olacaktır. Aşağıdaki butona tıklayarak seni hızlıca ilgili sayfaya yönlendirebiliriz. Çalışmaların esnasında takıldığın
+yerler olması durumunda sana yardımcı olabilmek için 3 tane ipucu bıraktık. İyi şanslar

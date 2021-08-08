@@ -1,0 +1,102 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-4" style="padding-top: 3%"><b>Reflected XSS</b></h1>
+        <p>
+            <b>Hello Warrior, </b>today we expect you to use the application outside of its purpose by entering unexpected
+            values in the field where the name is entered. By clicking the button below, we can quickly direct you to the
+            relevant page. We have left 3 tips to help you in case you get stuck during your studies. Good luck
+        </p>
+        <p><a class="btn btn-primary btn-lg" asp-action="Attack" role="button">Let's start &raquo;</a></p>
+    </div>
+</div>
+
+
+<div class="container" style="padding-top: 5%; margin-bottom: 5%">
+    <!-- Button trigger groups -->
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Button trigger modal 1-->
+            <button type="button" class="btn  btn-outline-info btn-lg btn-block p-5" data-toggle="modal"
+                    data-target="#exampleModalCenter">
+                Hint 1
+            </button>
+
+        </div>
+
+        <div class="col-md-4">
+            <!-- Button trigger modal 2-->
+            <button type="button" class="btn btn-outline-warning btn-lg btn-block p-5" data-toggle="modal"
+                    data-target="#exampleModalCenter2">
+                Hint 2
+            </button>
+        </div>
+
+        <div class="col-md-4">
+            <!-- Button trigger modal 3-->
+            <button type="button" class="btn btn-outline-danger btn-lg btn-block p-5" data-toggle="modal"
+                    data-target="#exampleModalCenter3">
+                Hint 3
+            </button>
+        </div>
+
+
+    </div>
+
+    <!-- Modals data -->
+    <div>
+        <!-- Modal 1 -->
+
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        You can try entering different characters other than letters.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 2 -->
+        <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        You can create payload using these "<", ">", "h1", "img", "src", "onerror", "alert" .
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 3 -->
+        <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        You can run javascript by typing &#x3C;img src=x onerror=alert(1)&#x3E;. Other than that, it may
+                        be useful to review <a href="https://github.com/payloadbox/xss-payload-list" target="_blank">Link</a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

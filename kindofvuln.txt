@@ -1,0 +1,263 @@
+Güvenli yazılım
+SQL Injection - MySQL
+IDOR
+    - vertical
+        - Unprotected Admin page -> robots.txt üzerinden gidip kullanıcı silme
+        - kaynak kod içerisinden bulup kullanıcı silme
+        - cookie'ler üzerinden admin=true yapıp kullanıcı silme
+        - Email güncelleme içerisinde massasaigment yapara user-id değerini admin yaparak hareket etme
+        - Frontend server önüne admin panel koyup bunu external'ı kapatan bir kural yazmışkar istekler frontend server dan
+        giderken hata veriyor bunu bypass etmek için X-Original-URL ve X-Rewrite-url header'ı eklenmiş
+    - horizantal
+        - userid üzerinden verileri elde etme idor işte
+        - guid üzerinden şekul şukul yapma var guid'i formlardaki yorumlardan alıyorsun güzelmiş
+    - horizantal to vertical > yetkisi bir kullanıcı ele geçişrildiğinde oluyor
+
+    - IDOR
+         - seçilen kullanıcıyı admin yapma isteği var ilkinde istek kontrol ediliyor fakat ikinicis onlayma durumunda
+         bir kontol olmadığı için IDOR gerçekleşiyor
+         - referer üzernden bir kontrol edilip sorsınradna bypass edild
+
+JWT Token
+Massassignment
+Path / Directory LFI
+    - Default ../../
+    - Double default ....//....//....//
+    - with image path example : /var/www/images/53.jpg --> /var/www/images/../../../../../../../etc/passwd
+    - Url encode
+    - Nullbyte : image=erdem.jpg --> image=/etc/passwd%00.png
+File Upload web shell
+DB'de md5 salt'sız password tuts
+Open URL redirect
+Command Injection
+    - Default : verdi çalıştı xss gibi
+    - Blind :
+Code Injection
+CORS
+    -   Bazı durumlarda bir domaine birden fazla domain erişmesi istek atıp response'u okuması gerekecek. Bu iş CORS tarafta tek tek tanımlama yaparak gidilmesi gerekiyor. Bizim zeki yazılımcılar bunun yerine bana
+    origin ile gel ben sana cevap verdiğimde senin origin bilgini Access-Contrrol-Allowed-Origin içerisine alıp tanım yapacağım diyor. Buda her yerden ulaşılabilir demektedir. (Origin refferer'ın yaptığını yapar sadece
+    domain'ini alır içerisine path eklemez) Buradaki senaryoda Originden ziyada uygulamanın cevap vermesi için istek içerisine session'larında eklenmesi gerekiyordu. Bunun yapmak için XHR request içerisine
+    xmlHttp.withCredentials = true; eklemeu durumda kaldım. İsteği CORS 1.soru çözümüne ekledim
+
+   -    Bazı uygulamalarda belirli domainlere göre kural yazar ve gelen bir istek içerisinde onun sadece domain kısmına bakar eğer elinde mevcutsa istek subdomain'den gelse bile hızlıca bir ayarlama yapar ve onada
+   izin vermiş olur.
+        -> Erdemstar.com izin verilmiş domain --> admin.erdemstar.com --> erdemstar.com izin verildiği için adam direk izin verecektir. Attacker burada erdemstar.com.attacker.com yaparak bypass eder
+   (Bunun örneği yok)
+
+   -    Buradaki senaryoda bir endpoint origin seçerek hareket ediyor. Eğer onun bekldiği bir origin vermezsen oda hata veriyor bunu bypass etmek için Origin:null yapmak gerekiyor. Normalde tarayıcının kontrol
+   ettiği header'lari XHR içerisinden eklerken hata veriyor fakat bu işlemi iframe üzerinden yapabildik. -> https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/CORS%20Misconfiguration#proof-of-concept-1
+
+   -    2 site arasında (A - B) iyi yapılandırılmış cors sistemi A üzerinde XSS bularak B'ye istek atıp gelen cevabı bir şekilde manipüle ederek bir attack senaryosu oluşturabilirsin (Örneği yok)
+
+   -    Bu senaryo çok enteresan mantığını değil nasıl yaptığımı anlatıcam. Bir yerde stock kontrol vardı onun üzerinden reflected XSS yapılabiliyordu. Bunu kullanarak ben /account kısmına request atabiliyordum.
+   Bunu yaparken origin kısmında bir problem yok. Reflected XSS içerisine account'a istek atan payload yerleştirm isteğe cevap gelip ben apikey'i yakalayabiliyordum sorun stock kontrrol kısmymıdı bir türlü orayı
+   çözemedim exploit server üzerindne. Benimde aklıma exploit server üzerinden domain.location.redirect geldi adamı gittim exploit server'dan stock kontrol'e redirect ettim zaten buradan sonra /account'a istek
+   atabiliyordum sonrasında geldi. Payload'ını ismiyle arat bulursun Breaking TLS with poorly configured CORS
+
+   -    Burada app expert idi atladım
+
+XSS
+    Reflected
+        (Şöyle bir XSS generator var fikir verir) https://portswigger.net/web-security/cross-site-scripting/cheat-sheet
+        -   search butonu kuyarak reflecte ediliyor
+        -   Bazı filter koyarak custom xss payload'ı oluşturulması tavsiye edilmişitir. Fakat arada fantaziye kaçılmıştır. Buada tagler ve attribute'lar intrued'la tespit edilmiştir. Buranın explıit tarafı bir saçma ediliyor
+        -   İframe içerisinde kullanıcı hareketi olmadan bir xss payloadı oluşturmam istendi. Bunun için custom tag oluşturup sonrasında onfocus attribute'ini yazdım --> https://book.hacktricks.xyz/pentesting-web/xss-cross-site-scripting#custom-tags
+        -   https://portswigger.net/web-security/cross-site-scripting/contexts/lab-event-handlers-and-href-attributes-blocked bunu yapamadım kontrol et
+
+    Stored
+        -   Basit bir stored xss
+    DOM
+    Karışık
+        - Stored XSS ile cookie stealing yaptm sonrasında çaltığım cookie'li bilgisayara girdim
+        - Burada bir stored xss var bir form alanı oluşturup password manager kullanan kişiler auto-fill özelliğinden yaralanarak username password çalma (tekrar vedicem)
+        - XSS ve CSRF kullanılarak token çalınıp sonrasında email değiştirme işlemi yapma
+    XXS in HTML tag Attributes
+        - alınan data doğrudan html içerisine bir elemanın value'sına veriliyordu bunun devmına " onclick="alert(1)" komularak çözüldğ
+        - dışıarndan alınan değer doğrudan href içerisine eklendi bunu kullanarak xss gerçekleşti
+        -   Gönderilen URL'in response içerisinde href='' eklendiği tespit edildi. Devamında bitişik olarak accesskey='X'onclick='alert(1)'x=' yazıldığında access key üzerinden zafiye tetitklendi
+        Benzeri Sakaya yapılacaktır.
+    XSS  into JAvascript (Javascript içerisinhe alınan veriyi </script> olarak kapat sonra html göm)
+        -   İlk senaryoda kullanıcıdan alınan veri doğrudan js variable'ına ekleniyor. Burada </script> tagıyla kapatıp sonra html tagı açılıyor
+        --> </script><img%20src="x"%20onerror="alert(1)">
+        -   Alınan veri JS variable'ına ekleniyordu burada </script> kapatmak mümkün olmadığı için variable'ı tırnakla kapatıp alert paylodu yazdım
+        --> erdemstar';alert(1);a='
+        -   Sıkıntı oluşturuacak bir karakter eklendiğinde burada app o karakterin arkasına bu karakter sıradan bir karater demek için / slash ekler. Fakat eklenen tırnak karakterinin hemen arkasına bir tane slash eklendiğinde
+        app'de kendisi ekleyecek böylece 2 slah birbirini nötürleemiş olup bizim tırnak karateri yorumlanaccak --> Erdemstar\';alert(1);//
+        -   Atladım --> https://portswigger.net/web-security/cross-site-scripting/contexts/lab-javascript-url-some-characters-blocked
+    XSS in JavaScript template literals String'ler içerisine javascript ifadeleri yazmaya yaran bir yapı olarka düşünülebilir. ${js} eklenerek bir nevi template injection yapılmaktadır.
+        -  Bir search alını vardı içerisine ${} yazabildiğimi tespit ettim ve payload olarak --> Erdemstar${alert(1)} verdiğmide çalıştı.
+    XSS in the context of the AngularJS sandbox
+        - Komple atladım
+
+CSRF
+    -   Email'i isteğini kullanıp burp üzerinden CSRF yapıp form'in içierisine https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/CSRF%20Injection#html-post---autosubmit---no-user-interaction kullanarak
+    auto submit yaptım.
+    -   Bazı durumlarda CSRF, token'la beraber canavar gibi çalışır fakat sen CSRF'in bulunduğu HTTP Verb'i değiştirdiğinde kontrol bypass edilebilir olur. Kendi hesabındaki csrf token'ı kullanarak fakrlı kullanıcılar
+    üzerine çalışma yapıp sonuç alabilirsin
+    -   Bu senaryoda Uygulama yine CSRF token üzerinde canavar gbibi bir kontrol yapar sahipliğini vs denetler fakat form içerisinde CSRF token eklenmezse ozamanda geç brocum der.
+    -   Bazı uygumalarda CSRF token her türlü beklenir fakat bu token hangi kullanıcıdan geldiği denetlenmeden eğer token validate ise geç brocum der
+    -   Bazı zafiyetlerde form'da gönderilen CSRF token yetmez bunun yanında Header içerisindede bir tane csrf token olur. Bu zafiyet te girii yaptığım A kullanıcısının form içerisindeki saabit CSRF token'ının çaldım.
+    Devamında Header içerisindeki token bilgisini aldım. Artık Hem header hemde form içersiindeki token'ı bir şekilde B kullanıcısına verip B'nin email bilgisin değiştirmek var. Header bilgisini set cookie üzerinden
+    tanımalanbilir bunun yapmak için uygulama üzerinde search kısmı vardı .Burasına girilen veriler header searchHistory olarak yazıldığını gördüm burası için CRLF (%0A %0D) kullanarak set cookie ataması yapacak bir arama
+    isteği oluşturdum. Bunu gittim CSRF form'u öncesinde img içerisine ekledim zaten search barda get üzerinden hareket ediyor. Daha sonra CSRF form oluşturup içerisinde dedim ki settimeout kullanarak form isteğini
+    5 saniye sonra çıkar. Bu işlem bittikten sonra zafiyet durumu gerçekleşti (Bunun payload bilgisini VS code içerisinde var)
+    -   Buradaki zafiyet üsttekiyle çalışma mantığı olarak aynı tek fark CSRF token hem header hemde post request'den gidiyor bunların birbiriyle aynı olması yeterli. Bende erdemstar diye token üretip zafiyeti exploit
+    ettim
+    -   Bazı CSRF kontrtolleri token'dna değil Refferer'dan gerçekleşiyor ve istek içerisinde refferer değerinin origini farklı olduğunda kızıyor. Bunu bypass etmek için CSRF HTML PoC içerisindeki form'a girip meta
+    tagiyle beraber no-freffere'e eklemek gerekliyor --> <head> <meta name="referrer" content="no-referrer"> </head>
+    - Bunu yapamadım amk enterasnsssss ama mantığı şu baız app'lerde refererdan domain bilgisi alıyor bunu yaparkende domain referer'ın içerisine varsa diye bir kural yazıyor bunu bypass etmek için bir subdomain için
+    attackyapacağın-domain.attacker-domain.com şeklinde payload yap diyor
+
+SSRF
+    - Normal
+        - Server'ın kendisine SSRF yapma
+            - Bir admin paneli vardı dışarıdan ulaşılamıyordu fakat localhost'den geliyordu orası üzerinden kullanıcı silme
+        - Farklı bir backend sunucuyu tokatlama SSRF üzerinden tokatlama
+        - Adam SSRF'a kural yazmış localhost admin vs'yi blockluyor burada farklı payload'lar girererk tokatlanamabilir
+        - bu expert olan yapamadım
+        - Bunuda yapamadım
+    - Blind
+        - bunu yaptım
+        - bunu yapamadım :((
+
+XXE
+    - Normal
+        - 1 tane XML query çıkartıp XML 2.satıra DTD ekleyerek /etc/passwd çekme
+        - İlkine benzer bir istek atıp bu sefer içeride çalışan bir endpoint üzerinden token çekme
+    - blind
+        -  Burası SSRF üzerinden DTD yaparak kontrol etme
+        -  Burada ise % payload'u kullanarak bypass etme vardı & kızıyordu
+        -  Burası Out of bound XXE idi burada bir dtd yapıp sonrasınd açağırma mevzusu var
+        -  (Error base)  Yuakarodakinin birebir aynısı fakat buradaç çıktı errormasge2in içerisinew basılıyor
+        -  Local DTD tespit edip onu re configure edip öyle hareket ediliyor. Burada olması gereken bir durum var oda local dtd'nin varlığını tespit etmek için error base bir durumdur. Sonrasında
+        file:///usr/share/yelp/dtd/docbookx.dtd pathi içerisindeki DTD editlenerek /etc/passwd okunsdu --> https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection#xxe-with-local-dtd
+    Hidden
+        -  Buradada baız app'ler kullanıcıdan aldığı veriyi xml doc'u içerine yazar ve öyle çalışır burada böyle bir zafiyetini sömürmek için XInclude tavsiye ediliyor.
+        -  SVG içerisinden file upload'la çek https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection#xxe-inside-svg
+
+Clickjaking
+    -   Güzel bir payload olmuş -> https://book.hacktricks.xyz/pentesting-web/clickjacking#basic-payload
+    -   Login olmuş bir kullanıcı için form oluşturulmuş ve bu form üzerinden kullanıcı kendi hesabını silen bir butonu var. Burası üzerine iframe içeren html sayfa yazılır ve günün sonunda ön yüze oturtulan sayfada butona
+    basılarak arka tarafta kullanıcı kendi hesabını silmiş olur
+    -   Burada ise email güncelleme işlemi için form yazılmış fakat sayfaya girildiğinde form'da email kısmı boş olduğu için saldırı gerçekleşmiyor. Onu bypass etmek için ilgil form açılırken querysting'i bir email?=""
+    kısmı eklenip öylece iframe'e eklendiğinde bypass diliyor biliyor
+    -   Burada adamlar email değiştirme form'i içerisine bir javasccript yazıp eğer bu sayfa bir tarayıcıda top olarak açlışırsa izin ver diğer türlü izin verme mantığı çalılıyor. Bunu bypass etmek için iframe içerisine
+    sandbox="allow-forms'e eklendi fakat mantığını tam oolarak anlamadım (Frame busting techniques olarak geçiyor ) / Harelde iframe içerisine alınmış bir sayfası sanbox parametresi sınırlandırmaya yarayır. Sayfanın
+    js'şlierini blockla popup aç veya kapat şeklindei. Bizde burada sandbox="allow-forms" diyerek sadece form özelliğini aktif et dediğin i guess
+    -   Buradada dom xss vardı önce dom xss bulup sonrasında iframe'li halini yazmak gerekiyor. Dom xss iframe içerisinden çalıştırmak bir tık zor oluyor. Bunu yapmak için sandbox içerisine aşağıdaki parametrelir ekledik.
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" Bu arada sandbox bir iframe'i kısıtlamaya yarayan attribute'dür. Popup çalışmasın javascript çalıştırma vs. gibi
+    -   Buradada çoklu adımlar koyarak bypass bir hesabı silme olayı gerçkelti. Multistep olarakda geçiyor  -->https://book.hacktricks.xyz/pentesting-web/clickjacking#multistep-payload
+
+DOM-based vulnerabilities
+    -   Bilinmesi gerekenler
+        -   Source : javascript ile alının bir verinin attacker tarafından yönetilmesi  --> document.referrer
+        -   Sink   : Attacker tarafından alınan bir verinni js fonskyina veya dom objesine pass edilmesidir.    --> eval(attacker-data)
+    -   Dom based xss
+        -   Burada kullanıcıdan alınan search değeri query fonksiyonu içerisine alınıp bu fonksiyon içeriside document.write yapılıyor. Buradaki problemi tespit etmek gelen response'u okuyarak münkün olabilir birkaç paylaoad
+        denedim gerçek testimde denk gelse zafiyeti kaçırmıştım.
+    -   Burada ise yine kaynak kod okunarak url içerisine bir tane daha quertstring ekledim sonrasında querystring içerisine gelen daha options'a basılıyordu onunda bypass edip tamamdır
+    payload : Erdemstar")</script><script>alert(1)</script>
+    -   Burada ise alının veri innerhtml fonksiyonu kullanılarak ekrana basılıyor. yine kaynak kodu okuyarak zafiyeti varlığını tespit ettim sonrasında birkaç payloa denedim ve yedi fakat innerhtml ile bypass etmk biraz
+    farkalı olabiliyormuş
+    -   Feedback alan bir form vardı. URL'den alınan path bilgisine göre back buttonu üzerinden redirect yapılabiliyodu. URL' javascript:alert(1) payload yazılarak bypass edildi.
+    -   Burada angular framework kullanılmış. Bir search barı üzerinden data alan bir form vardı ve burada angular encode yaptığı için doğrudan xss kolayca bulanamıyordu. Bunun bypass etmek için ilk adım {{erdemstar}}
+    şeklinde bir payload gönderip çıktıyı kontrol etmek olacak sonrasında eğer çıktı alırsan  {{constructor.constructor('alert(1)')()} buradaki payload işe yaracaktık.
+    Fazlası için --> https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XSS%20Injection/XSS%20in%20Angular.md#xss-in-angular-and-angularjs
+    -   Burada uygulama XHR ile bir istek atıp gelen json veriy ieval içerisinde işliyor. Burada XSS yapmak için gelen json'ı manipüle etmek lazım mesela gelen response'da birşekilde " atıp json tiğini boazmak ve elde edilen
+    veri json'dan bozup text yaparak js tarafında xss patlamak (Yapamadım) kullandığın işaretler arasında \ / { } eklemeyi unutma hayati öneme sahipss
+    -   Burası içinde stored dom base xss söz konusu idi bunu çözmek için adamların htmlescape metodunu iyi anlamak gerekiyor. Bu method içerisinde escape yapıldı <> için fakat payload içerisinde <><> girersen ilk karaterler
+    için escape yaparken diğerleri için yapmadı. Bunun üzerinden XSS gerçekleşti (Yapamadım)
+
+    - Controlling the web-message source (Bir web app dışarıdan mesaj gelmesi için event yazıp bu event tetiklendiği , tetiklenen yerde kullanıcıdan aldığı veriyi doğrudan htmkl içerisine koyması durumda gerçekleşir.
+    Port swigger bunu daha güzel açılklamış --> https://portswigger.net/web-security/dom-based/controlling-the-web-message-source)
+        -   Yapısını bilmediği varlığından emin olmadığım bir zafiyetti. Ana sayfası içerisinde bir event tanımlanmış bu event tetiklendiğinde senden bir parametre bekliyor ve bu h1'in içerisine yazıyor. Bu haliyle
+        zaten ofsayt fakat nasıl tetiklenebilir bunu yapmak için iframe gerekiyor bu sayfayı iframe'de çağırıp içerisine onlaad olduğunda git bekleyen event'e tetikle ve san verdiğim parametreyi çağır
+        -   Yukarıdakine benzer bir zafieyet gerçekleşti fakat burada location.url = içerisine payload yazmak gerekiyor. Burada bir payload yazmadan önce gelen url içerisine http/https olup olmadığını kontrol ediyordu.
+        Bunu bypass etmek için payload içerisinin sonuna http içerisine ekleyerek bypass edildi.. payload --> javascript:alert(1);//http:
+        -   Buda diğerlerinin aynısı içerisine doğrudan data değil json formatı göndermek lazım. Bunun için çok çalıştım fakat doğru payload'ı vuramadım.
+        Payload -->  onload = 'this.contentWindow.postMessage("{\"type\":\"load-channel\",\"url\":\"javascript:alert(document.cookie)\"}","*")'   gibidir.
+   - Dom based OPEN Redirecy
+        -   çok kolay bir senaryosu var yapamadın
+
+    - What is DOM clobbering (XSS'in mümkün olmadığı fakat kullanıcıdan alınan verilerin html içerisine yazıldığı sonrasında global değişkenlerin ezildiği bir attack türüdür. Günün sonunda uygunakaya unsafe veri verip
+    çalışma akışını değiştirmek)
+        - 2 tane expert labı var bakarsın
+
+Web Socket
+    -   Bir chat alanı oluşturup bende aldığı veriyi doğrudan html'e basıyordu. Alert içeren bir payload'la bu XSS yaıldı
+    -   XSS payload'larına kızan bir backend vardı ip block yapıp websocket'i kapatıyordu. Bu durumu bypass etmek için X-Forwarded-For header'i kullanıldı. Devamında xss payload'ına kızan bir regex koruma vardı. Bunu
+    bypass etmek için JavaScripT büyük küçük yazdım fakat bu sefert'de alert'e kızıyordu. Alert büyük küçük yazıldığında hata veriyordu fakat JavaScript:alert olarak bırakıldığında bir problem yoktu. Bunun devamı için
+    internetten bir araştırma yaptım ve alert`1` yapılarakda paylatıldığını gördüm --> https://github.com/RenwaX23/XSS-Payloads/blob/master/Without-Parentheses.md
+
+    -   Burada bildiğin CSRF yaptık tek fark hedef socketi yazdık ve socket'den gelen cevapları bir domaine XHR request ile cevap olarak attırdık. Burada önemli olan şey websocket'le konuşurken Hello vs. gibisinden
+    bir mesaj gidebiliyor veya bunun gibi harcoded birşey bekliyor olabilir giden gelen mesajları iyi analiz et ve ona göre mesaj gönder
+    Bu güzel bir payload olabilir --> https://book.hacktricks.xyz/pentesting-web/cross-site-websocket-hijacking-cswsh#simple-attack
+
+
+Server Side template Injection (Template'ler server side tarafta oluşturukuo öyle gönderilir. Template içerisine bir veri değilde birleştirilmiş bir ifade eklenmesi bir felaket olabilir. Bazı durumlarda
+zafiyeti tespit ederken inputu kurcalamak lazım bazı durumlarda ise bu veriiler form'a girdiğin datalar üzerinden alınabilir. Bu durumda url'e vs dikkat edersin. Kendi labımda maco vs. gibi template2ler
+kullanarak PoC yapabilirsin)
+    -   Karşna bir alışveriş sayfası verdib burası üzerinde zaman geçirirken bir tane üründe out of stock yazısı vardı ve bu yazı url üzerinden alınıyordu. Önce XSS yaptım sonrasında bir tık ileri giderek template
+    injection kastım. Günün <% 6*6  %> yorumlandığını görüp bunun üzerindne ERB Template injection olduğunu anladım. Sonrasında <%= system("rm -r doya_adi") %> ile belirtilen dosyayı sildim
+    -   Uygulama içerisinde isim güncelleme alanı vardı. Buradaki değerlerden bir tanesini seçio yorumlardaki isminde bir değişiklik oluyordu. İsim değiştirme isteği blog-post-author-display=user.first_name
+    gibidir. Önce badchars'lar ekleyerek zafiyetin varlığını tesoit ettim sonrasında }}{% import os %}{{os.system('rm -r morale.txt')} ekleyerek benden istenini yerine getirdim
+    -   Burada username password ile giriş yapıp form sayfalarındaki template değerlerini değiştirip gönderebilidğimi gözlemledim. Hangi template engine2in kullanıldığını bulmak için sıralı bir deneme yanılma
+    yaptım günün sounda java'nın freemarker'ı kullanıldığını tespit ettim. Sonrasında aşağıdaki RCE payload kullanılarak bypass ettim.
+    <#assign ex = "freemarker.template.utility.Execute"?new()>${ ex("id")}
+    -   Buradada aslında Template injection varlığını bulup sonrasında badchars'larla beraber hangi template2ı kullandığı tespit ediliyor. Sınrasında Handlebars olduğunu görüp internette RCE payload'ını bulup
+    bunu düzenleyip gönderdiğimde zafiyeti tamamladım. https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection#handlebars---command-execution
+    -   Djago üzerinden proje içerisindeki secreti okudum
+    -   Expert'i atladım
+    -   Expert'i atladım
+API endpoint sömürülecek şekilde
+Captcha bypass
+Information Disclosure
+    - Error page üzerinden yakalama
+    - Commment edilmiş html içerisinden yakalama
+    - Fuzzing yaparak tespit etme
+    - /.git içerisinde password
+
+Host Header İnjection
+    Denenecekler
+        - host: erdemstar.com --> host: erdemstar.com:erdemstar şeklinde port ver bakalım ne olacak
+        - host: erdemstar.com --> host: erdoerdemstar.com --> şeklinde yapıp başına birşeyler ekleyebilirsin
+        - host: erdemstar.com --> host: erdemm.erdemstar.com --> yaparak deneyebilirsin
+        - Bir request içerisine 2 tane host headerı eklemek farklı bir attack
+        - GET methodunundan sonra hedef server'ın url adresini full verirken host kısmındaki adresi manipüle ederek ver
+        veya buradaki senaryoyu tam tersi yap
+        - Host headerı eğer değişmemekte kararlı çıktıysa bu sefer yapılacak olan şey X-forwraded-for gibi header'lar ekleyerke
+        denemek olacaktır
+    Sorular
+        -  Web poisoning le alaklıyla atladım
+        -  Expert vardı atladım
+        -  Host header'ını localhost yapıp admin sayfasına erişme
+        -  Sunucu üzerinde external ve internal'a bakan aynı uygulama vardı. Internal taraf için 192.168.0.53 ip'sini
+        host header'ıa vererek ezdim admin panelinden SSRF üzerinde kullanıcı sildim
+        -  Burada ise SSRF'i GET metohudu yanındaki path'e full url ve path verecek şekilde ayarlayıp öyle giderken host
+        kısmında internal ip adresi yazma var. Aklında olsun get'den sonra full link vermeyi unutma
+        https://infosecwriteups.com/identifying-escalating-http-host-header-injection-attacks-7586d0ff2c67 buradaki 5.ci adım
+        -  Password unuttum kısmı var burası için kullanıcı yazıp ilgili kullacıyıa password reset linki atıyor. Bu link içerisinde
+        token'la beraber reset yapılabiliyor. Password unuttum kısmı host header ezilebilir. Burada host header'ı (erdemstar.com)
+        ezerek kendi kullanıcımıza pass forget attığımızda mailin geldiğini gidilecek url'in erdemstar.com ile başladığıo tespit edildi.
+        Burada hedefi carlos yapıp host header bizim gidilecek url'iyapıtığımızd adam bizim server'i kendi token'la istek
+        atıp tokenı çaldırmıi oluro
+
+Web Cache Poisoning
+    -   Saldırı kendi içinde 3 adımda gerçekleşir
+        1. Identify and evaluate unkeyed inputs = İlk adımda cache'lenecek istek içerisinde unkey olmuş parametrelerin
+        response içerisinde yansıyıp yansımadığını bulmak. Böylece cache'lenecek bir istek içerisine unkey'leri ekleyerek
+        zarar vermek mümkün okur. Bu işlemi yapmak için istek içerisineki heryere rast gele değerler ekleyip response'da
+        varlığını görmek bunu manüel yapabileceğin gibi paramminer ile'de yapabilirsin. Paramminer'a gir guess header veya
+        benzer bir seçeceği seçmek yeterli
+
+        2. Elicit a harmful response from the back-end server = Bu adımda elde ediken unkey edilmiş input'ların webserever
+        tarafından nasıl kullanıldığını bilinmesi gerekiyor. Buradan çıkacak sonuca göre attack dahada kiritk olabilir
+
+        3. Get the response cached = 2.adıma kadar gelmek savaşın yarısı olarak düşünmek lazım. Tespit ettiğimiz zafiyetleri
+        cache'lemek için uygulama üzerindeki istekler karıştırılıp uygulamanın bir isteği nasıl cache'lediğini tespit etmek
+        gerekiyor. Bunu için çok daha detaylı port swigger yazıları var.
+
+        Exploiting cache design flaws (cache uygulaması sırasında yapılan htalardan kaynaklı zafiytetler)
+            -
+
+

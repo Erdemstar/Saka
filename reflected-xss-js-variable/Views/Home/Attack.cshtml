@@ -1,0 +1,45 @@
+﻿@model reflected_xss_js_variable.Models.Username; 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+
+        <div class="col-md-8">
+
+            @{
+                if (Model.Name != "")
+                {
+                    <div id="show_name" class="alert alert-success" role="alert" style="margin-top: 3%"></div>
+                }
+            }
+
+
+
+            <form method="get">
+                <div class="form-group">
+                    <label for="name">You can enter your name</label>
+                    <input type="text" class="form-control" id="Name" name="Name" aria-describedby=""
+                           placeholder="Example: Bruce Wayne">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+        <div class="col-md-2">
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+    var span = document.createElement("span");
+    span.innerHTML = "Nice to meet you" + "<b> @Html.Raw(@Model.Name) <b>";
+        document.getElementById('show_name').appendChild(span);
+</script>

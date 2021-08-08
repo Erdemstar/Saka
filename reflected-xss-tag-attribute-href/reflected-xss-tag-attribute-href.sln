@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "reflected-xss-tag-attribute-href", "reflected-xss-tag-attribute-href.csproj", "{4D1E36C4-690D-4B21-82A3-6956E208CFAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D1E36C4-690D-4B21-82A3-6956E208CFAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D1E36C4-690D-4B21-82A3-6956E208CFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D1E36C4-690D-4B21-82A3-6956E208CFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D1E36C4-690D-4B21-82A3-6956E208CFAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6394B0E5-ED3E-4C03-AF6B-0DD251664C10}
+	EndGlobalSection
+EndGlobal

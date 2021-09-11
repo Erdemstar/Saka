@@ -1,0 +1,46 @@
+﻿@model reflected_xss_input.Models.Username;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+
+        <div class="col-md-8">
+
+            @{
+                if (Model.Name != "")
+                {
+                    if (Model.ControlRegex(Model.Name))
+                    {
+                        <div class="alert alert-success" role="alert" style="margin-top: 3%">
+                            Nice to meet you <b>@Model.Name</b>
+                            <input type="hidden" value='@Html.Raw(Model.Name)' />
+                        </div>
+                    }
+                }
+
+
+            }
+
+
+            <form method="post">
+                <div class="form-group">
+                    <label for="Name">Enter your name</label>
+                    <input type="text" class="form-control" id="Name" name="Name" aria-describedby=""
+                           placeholder="Example: Smith">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+        <div class="col-md-2">
+
+        </div>
+    </div>
+
+</div>

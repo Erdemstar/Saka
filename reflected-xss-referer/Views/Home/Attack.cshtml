@@ -21,7 +21,7 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
                 <div class="form-group">
-                    <input type="hidden" class="form-control" id="referer" name="referer" value="@ViewBag.referer">
+                    <input type="hidden" class="form-control" id="referer" name="referer" value="@Html.Raw(ViewBag.referer)">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

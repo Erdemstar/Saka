@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+
+            <div>
+                <!--
+                <h2>Change Hobby</h2>
+                <form method="post" action="/Home/">
+                    <div class="form-group">
+                        <label for="">Hobby </label>
+                        <input name="hobby" type="text" class="form-control" id="hobby" placeholder="">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                Added form for to change hobby information but this form is not completed. Later i'll fix it.
+                -->
+
+            </div>
+
+            <div style="margin-top: 5%">
+
+                @if (TempData["hobby"].ToString() == "I like playing basketball")
+                {
+                    <div class="jumbotron">
+                        <h1 class="display-4">Hello, @TempData["name"] @TempData["lastname"]</h1>
+                        <p class="lead">This is simple profile page. It's not finished but you can see both your username and hobby information</p>
+                        <hr class="my-4">
+                        <p>Your hobbies is @TempData["hobby"]</p>
+                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                    </div>
+                }
+                else
+                {
+                    <p>Man you did it</p>
+                }
+
+
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

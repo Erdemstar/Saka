@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stored-xss-comment.Mvc", "stored-xss-comment.Mvc\stored-xss-comment.Mvc.csproj", "{C6416063-2786-408B-879E-C69D7921F336}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stored-xss-comment.Core", "stored-xss-comment.Core\stored-xss-comment.Core.csproj", "{6EF38EDC-7FF1-4AFB-A573-0F65D3C070CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stored-xss-comment.Infrastructure", "stored-xss-comment.Infrastructure\stored-xss-comment.Infrastructure.csproj", "{E2202E33-1CBF-470B-A394-65139C79E51E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6416063-2786-408B-879E-C69D7921F336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6416063-2786-408B-879E-C69D7921F336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6416063-2786-408B-879E-C69D7921F336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6416063-2786-408B-879E-C69D7921F336}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EF38EDC-7FF1-4AFB-A573-0F65D3C070CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EF38EDC-7FF1-4AFB-A573-0F65D3C070CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EF38EDC-7FF1-4AFB-A573-0F65D3C070CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EF38EDC-7FF1-4AFB-A573-0F65D3C070CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2202E33-1CBF-470B-A394-65139C79E51E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2202E33-1CBF-470B-A394-65139C79E51E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2202E33-1CBF-470B-A394-65139C79E51E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2202E33-1CBF-470B-A394-65139C79E51E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

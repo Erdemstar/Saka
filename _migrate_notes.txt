@@ -1,0 +1,2 @@
+- dotnet ef migrations add InitialCreate --project ./stored-xss-input.Core --startup-project ./stored-xss-input.Mvc
+- dotnet ef database update --project ./stored-xss-input.Core --startup-project ./stored-xss-input.Mvc 

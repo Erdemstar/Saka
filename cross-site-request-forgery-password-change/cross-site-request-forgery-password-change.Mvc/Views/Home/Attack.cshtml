@@ -1,0 +1,62 @@
+﻿@model cross_site_request_forgery_password_change.Core.Entity.Account.AccountEntity
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+
+
+            <div>
+
+                @if (Model is null)
+                {
+                    <h2>@ViewBag.AttackError</h2>
+                }
+                else
+                {
+                    <h2>@Model.Email</h2>
+                    <h2>@Model.Name</h2>
+                    <h2>@Model.Lastname</h2>
+                    <h2>@Model.Address</h2>
+                }
+
+                <h2>Password Change</h2>
+
+                <form method="post" enctype="multipart/form-data" action="/Home/Attack">
+                    <div class="form-group row">
+                        <label for="password" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="password" name="password">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="password2" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="password2" name="password2">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Change</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div style="margin-top: 5%">
+
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

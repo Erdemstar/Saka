@@ -1,0 +1,50 @@
+﻿@model server_side_request_forgery_show_image.Mvc.Controllers.HttpResponseEntity
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+
+            <div>
+                <h2>Sample Files</h2>
+                <ul>
+                    <li>
+                        <a asp-action="Attack" asp-controller="Home" asp-route-url="https://celebrateurbanbirds.org/wp-content/uploads/2016/08/house-finch-1920x1920.png">Saka Sample Picture</a>
+                    </li>
+                </ul>
+
+                <form action="/Home/Attack" method="get" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="url">Please enter URL</label>
+                        <input type="text" name="url" class="form-control" id="url">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </form>
+
+            </div>
+
+            <div style="margin-top:5%">
+
+                @if (string.IsNullOrEmpty(ViewBag.Error) == false)
+                {
+                    <h1>@ViewBag.Error </h1>
+                }
+
+                @if (Model is not null)
+                {
+                    <img src="data:image/jpeg;base64,@Model.content" alt="Fetched Image"/>
+                }
+
+            </div>
+
+
+        </div>
+
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

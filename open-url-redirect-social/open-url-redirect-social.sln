@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "open-url-redirect-social.Mvc", "open-url-redirect-social.Mvc\open-url-redirect-social.Mvc.csproj", "{027CBBFD-B498-48C1-9D94-1B0D8E64351A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{027CBBFD-B498-48C1-9D94-1B0D8E64351A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{027CBBFD-B498-48C1-9D94-1B0D8E64351A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{027CBBFD-B498-48C1-9D94-1B0D8E64351A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{027CBBFD-B498-48C1-9D94-1B0D8E64351A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

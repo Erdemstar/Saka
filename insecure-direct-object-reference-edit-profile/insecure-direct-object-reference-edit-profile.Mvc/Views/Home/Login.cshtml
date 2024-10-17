@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+
+            <h2>Login Panel</h2>
+            <form method="post" action="/Home/Login">
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input name="email" type="email" class="form-control" id="email" placeholder="user@saka.com">
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input name="password" type="password" class="form-control" id="password" placeholder="name@example.com">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+
+
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

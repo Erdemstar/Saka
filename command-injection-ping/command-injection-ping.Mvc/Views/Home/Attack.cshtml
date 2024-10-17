@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+
+            <div>
+                <form action="/Home/Attack" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="ip">Please Enter IP or Domain Address</label>
+                        <input type="text" name="ip" class="form-control" id="ip">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </form>
+            </div>
+            
+            <div>
+                @if (ViewBag.result != null)
+                {
+                    <p>@ViewBag.result</p>
+                }
+                else
+                {
+                    
+                }
+            </div>
+
+
+        </div>
+
+
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

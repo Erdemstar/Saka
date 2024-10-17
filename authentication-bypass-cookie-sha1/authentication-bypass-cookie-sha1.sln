@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "authentication-bypass-cookie-sha1.Mvc", "authentication-bypass-cookie-sha1.Mvc\authentication-bypass-cookie-sha1.Mvc.csproj", "{BCAF8792-699F-4621-94E1-6F0880A4AE7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCAF8792-699F-4621-94E1-6F0880A4AE7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCAF8792-699F-4621-94E1-6F0880A4AE7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCAF8792-699F-4621-94E1-6F0880A4AE7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCAF8792-699F-4621-94E1-6F0880A4AE7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

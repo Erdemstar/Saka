@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Saka</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" href="~/css/font-awesome.css"/>
+    <link rel="stylesheet" href="~/css/social-media.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico"/>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" asp-action="">Main</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Home" asp-action="Login">Login<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Home" asp-action="Attack">Attack<span class="sr-only"></span></a>
+            </li>
+        </ul>
+
+        <!-- Logout button aligned to the right -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form asp-controller="Home" asp-action="Logout" method="post">
+                    <button type="submit" class="btn btn-outline-light">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<main role="main">
+    @RenderBody()
+</main>
+
+<style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+        }
+    </style>
+<footer class="fixed-bottom" style="background-color:#e9ecef;">
+    <div class="container" style="margin-top:2%">
+        <p>
+            This project has been developed to serve by providing an environment where friends who want to practice in
+            the field of web security can develop their skills, while coding the vulnerabilities that I have found out
+            of the ordinary in security tests.
+        </p>
+
+        <div class="template-demo" style="margin-bottom:10px">
+            <button onclick="window.open('https://www.linkedin.com/in/erdemyildiz/','_blank');"
+                    type="button" class="btn btn-social-icon btn-outline-linkedin">
+                <i class="fa fa-linkedin"></i>
+            </button>
+            <button onclick="window.open('https://twitter.com/Erdemstar13','_blank');" type="button"
+                    class="btn btn-social-icon btn-outline-twitter">
+                <i class="fa fa-twitter"></i>
+            </button>
+            <button onclick="window.open('https://github.com/ErdemStar','_blank');" type="button"
+                    class="btn btn-social-icon btn-outline-github">
+                <i class="fa fa-github"></i>
+            </button>
+        </div>
+    </div>
+</footer>
+
+
+<script src="~/lib/jquery/dist/jquery-3.2.1.slim.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/js/popper.min.js"></script>
+
+@RenderSection("Scripts", false)
+</body>
+</html>

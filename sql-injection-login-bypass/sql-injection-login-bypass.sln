@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sql-injection-login-bypass.Mvc", "sql-injection-login-bypass.Mvc\sql-injection-login-bypass.Mvc.csproj", "{74D0D087-0387-4CC9-917F-724B07150A22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sql-injection-login-bypass.Core", "sql-injection-login-bypass.Core\sql-injection-login-bypass.Core.csproj", "{508DA70E-DE83-41D0-84C7-4EE3D27DBE5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sql-injection-login-bypass.Infrastructure", "sql-injection-login-bypass.Infrastructure\sql-injection-login-bypass.Infrastructure.csproj", "{198EAEA1-BE30-4763-8C8A-E114B303E662}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74D0D087-0387-4CC9-917F-724B07150A22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74D0D087-0387-4CC9-917F-724B07150A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74D0D087-0387-4CC9-917F-724B07150A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74D0D087-0387-4CC9-917F-724B07150A22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{508DA70E-DE83-41D0-84C7-4EE3D27DBE5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{508DA70E-DE83-41D0-84C7-4EE3D27DBE5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{508DA70E-DE83-41D0-84C7-4EE3D27DBE5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{508DA70E-DE83-41D0-84C7-4EE3D27DBE5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{198EAEA1-BE30-4763-8C8A-E114B303E662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{198EAEA1-BE30-4763-8C8A-E114B303E662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{198EAEA1-BE30-4763-8C8A-E114B303E662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{198EAEA1-BE30-4763-8C8A-E114B303E662}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

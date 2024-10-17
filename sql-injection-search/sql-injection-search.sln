@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sql-injection-search.Core", "sql-injection-search.Core\sql-injection-search.Core.csproj", "{20B6E8DE-2FE2-421B-9ADE-4245F1E34593}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sql-injection-search.Mvc", "sql-injection-search.Mvc\sql-injection-search.Mvc.csproj", "{2EB124FB-D735-409E-BF81-4894B8BFCE2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sql-injection-search.Infrastructure", "sql-injection-search.Infrastructure\sql-injection-search.Infrastructure.csproj", "{54A39DC0-0EAA-4111-9600-A7AFF1645C98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20B6E8DE-2FE2-421B-9ADE-4245F1E34593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20B6E8DE-2FE2-421B-9ADE-4245F1E34593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20B6E8DE-2FE2-421B-9ADE-4245F1E34593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20B6E8DE-2FE2-421B-9ADE-4245F1E34593}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EB124FB-D735-409E-BF81-4894B8BFCE2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EB124FB-D735-409E-BF81-4894B8BFCE2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EB124FB-D735-409E-BF81-4894B8BFCE2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EB124FB-D735-409E-BF81-4894B8BFCE2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54A39DC0-0EAA-4111-9600-A7AFF1645C98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54A39DC0-0EAA-4111-9600-A7AFF1645C98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54A39DC0-0EAA-4111-9600-A7AFF1645C98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54A39DC0-0EAA-4111-9600-A7AFF1645C98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

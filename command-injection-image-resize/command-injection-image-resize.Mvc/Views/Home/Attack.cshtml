@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+
+            <div>
+                <form action="/Home/Attack" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="width">Width</label>
+                        <input type="text" name="width" class="form-control" id="width">
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Height</label>
+                        <input type="text" name="height" class="form-control" id="height">
+                    </div>
+                    <div class="form-group">
+                        <label for="filename">Filename</label>
+                        <input type="text" name="filename" class="form-control" id="filename">
+                    </div>
+                    
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div>
+                @if (ViewBag.status == true)
+                {
+                    <p class="alert alert-success">@ViewBag.result</p>
+                }
+                
+                @if (ViewBag.status == false && ViewBag.result != "")
+                {
+                    <p class="alert alert-alert">@ViewBag.result</p>
+                }
+            </div>
+
+
+        </div>
+
+
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

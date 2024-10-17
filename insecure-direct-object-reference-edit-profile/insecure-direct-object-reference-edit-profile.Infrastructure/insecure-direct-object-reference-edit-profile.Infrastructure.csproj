@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>insecure_direct_object_reference_edit_profile.Infrastructure</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\insecure-direct-object-reference-edit-profile.Core\insecure-direct-object-reference-edit-profile.Core.csproj" />
+    </ItemGroup>
+
+</Project>

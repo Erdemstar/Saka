@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "authentication-bypass-session-fixation", "authentication-bypass-session-fixation\authentication-bypass-session-fixation.csproj", "{ED89DBF8-58E3-466F-A01B-C32F485B4671}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED89DBF8-58E3-466F-A01B-C32F485B4671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED89DBF8-58E3-466F-A01B-C32F485B4671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED89DBF8-58E3-466F-A01B-C32F485B4671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED89DBF8-58E3-466F-A01B-C32F485B4671}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

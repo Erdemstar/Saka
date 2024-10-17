@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "local-file-inclusion-filename.Mvc", "local-file-inclusion-filename.Mvc\local-file-inclusion-filename.Mvc.csproj", "{31A4BC0D-0AFC-4096-8C94-E5373E746CA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "local-file-inclusion-filename.Core", "local-file-inclusion-filename.Core\local-file-inclusion-filename.Core.csproj", "{CA2B099C-8045-461B-8F2B-73743895503A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31A4BC0D-0AFC-4096-8C94-E5373E746CA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31A4BC0D-0AFC-4096-8C94-E5373E746CA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31A4BC0D-0AFC-4096-8C94-E5373E746CA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31A4BC0D-0AFC-4096-8C94-E5373E746CA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA2B099C-8045-461B-8F2B-73743895503A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA2B099C-8045-461B-8F2B-73743895503A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA2B099C-8045-461B-8F2B-73743895503A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA2B099C-8045-461B-8F2B-73743895503A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

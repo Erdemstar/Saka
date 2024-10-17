@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "information-leakage-comment.Mvc", "information-leakage-comment.Mvc\information-leakage-comment.Mvc.csproj", "{DCE68BD6-BD04-4117-B4C6-BE410DB7C502}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCE68BD6-BD04-4117-B4C6-BE410DB7C502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCE68BD6-BD04-4117-B4C6-BE410DB7C502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCE68BD6-BD04-4117-B4C6-BE410DB7C502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCE68BD6-BD04-4117-B4C6-BE410DB7C502}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

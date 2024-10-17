@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cross-site-request-forgery-account-delete.Mvc", "cross-site-request-forgery-account-delete.Mvc\cross-site-request-forgery-account-delete.Mvc.csproj", "{BBED8281-4620-4FBC-9D56-B04C7D500B69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cross-site-request-forgery-account-delete.Core", "cross-site-request-forgery-account-delete.Core\cross-site-request-forgery-account-delete.Core.csproj", "{3FA60413-13F7-4D6C-8CF1-BE7EECD17EE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cross-site-request-forgery-account-delete.Infrastructure", "cross-site-request-forgery-account-delete.Infrastructure\cross-site-request-forgery-account-delete.Infrastructure.csproj", "{F3676366-C9E2-4338-BE83-9C1107B0BE51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBED8281-4620-4FBC-9D56-B04C7D500B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBED8281-4620-4FBC-9D56-B04C7D500B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBED8281-4620-4FBC-9D56-B04C7D500B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBED8281-4620-4FBC-9D56-B04C7D500B69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FA60413-13F7-4D6C-8CF1-BE7EECD17EE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FA60413-13F7-4D6C-8CF1-BE7EECD17EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FA60413-13F7-4D6C-8CF1-BE7EECD17EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FA60413-13F7-4D6C-8CF1-BE7EECD17EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3676366-C9E2-4338-BE83-9C1107B0BE51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3676366-C9E2-4338-BE83-9C1107B0BE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3676366-C9E2-4338-BE83-9C1107B0BE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3676366-C9E2-4338-BE83-9C1107B0BE51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

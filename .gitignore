@@ -223,3 +223,8 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+# Custom
+
+.idea/
+**/*.DS_Store

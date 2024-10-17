@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "server-side-request-forgery-basic.Mvc", "server-side-request-forgery-basic.Mvc\server-side-request-forgery-basic.Mvc.csproj", "{2763D4DA-3CC0-4711-969C-12C7408055D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2763D4DA-3CC0-4711-969C-12C7408055D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2763D4DA-3CC0-4711-969C-12C7408055D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2763D4DA-3CC0-4711-969C-12C7408055D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2763D4DA-3CC0-4711-969C-12C7408055D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,19 @@
+﻿@model ErrorViewModel
+
+<h1 class="text-danger">Bir Hata Oluştu</h1>
+<h2 class="text-danger">@Model.ErrorMessage</h2>
+
+@if (!string.IsNullOrEmpty(Model.StackTrace))
+{
+    <div>
+        <h4>Stack Trace:</h4>
+        <pre>@Model.StackTrace</pre>
+    </div>
+}
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+}

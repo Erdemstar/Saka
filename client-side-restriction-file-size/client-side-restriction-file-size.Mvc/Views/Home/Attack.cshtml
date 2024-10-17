@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+            
+            <script>
+                    function validateFileSize() {
+                        const fileInput = document.getElementById("file");
+                        const file = fileInput.files[0];
+                        const maxSize = 2 * 1024 * 1024; // 2MB limit
+            
+                        if (file.size > maxSize) {
+                            alert("File size exceeds 2MB!");
+                            return false;
+                        }
+                        return true;
+                    }
+                </script>
+
+            <div>
+                <h2>Only 2 MB files is allowed</h2>
+                <form action="/Home/Attack" method="post" enctype="multipart/form-data" onsubmit="return validateFileSize();">
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input type="file" name="file" class="custom-file-input" id="file" aria-describedby="inputGroupFileAddon03">
+                            <label class="custom-file-label">Choose file</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <div style="margin-top: 5%">
+                    @if (string.IsNullOrEmpty(ViewBag.status) == false)
+                    {
+                        <div class="alert alert-primary" role="alert">
+                            @ViewBag.status
+                        </div>
+                    }
+                   
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

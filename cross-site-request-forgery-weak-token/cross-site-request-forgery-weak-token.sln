@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cross-site-request-forgery-weak-token.Mvc", "cross-site-request-forgery-weak-token.Mvc\cross-site-request-forgery-weak-token.Mvc.csproj", "{2B291681-57F1-4D9C-83A5-4CCC0035A265}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cross-site-request-forgery-weak-token.Core", "cross-site-request-forgery-weak-token.Core\cross-site-request-forgery-weak-token.Core.csproj", "{0C84A4D8-8142-4EB3-AE61-358C8A2C1C01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cross-site-request-forgery-weak-token.Infrastructure", "cross-site-request-forgery-weak-token.Infrastructure\cross-site-request-forgery-weak-token.Infrastructure.csproj", "{B48D4BFD-10D6-4EB1-9359-3EF61EC91D7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B291681-57F1-4D9C-83A5-4CCC0035A265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B291681-57F1-4D9C-83A5-4CCC0035A265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B291681-57F1-4D9C-83A5-4CCC0035A265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B291681-57F1-4D9C-83A5-4CCC0035A265}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C84A4D8-8142-4EB3-AE61-358C8A2C1C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C84A4D8-8142-4EB3-AE61-358C8A2C1C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C84A4D8-8142-4EB3-AE61-358C8A2C1C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C84A4D8-8142-4EB3-AE61-358C8A2C1C01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B48D4BFD-10D6-4EB1-9359-3EF61EC91D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B48D4BFD-10D6-4EB1-9359-3EF61EC91D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B48D4BFD-10D6-4EB1-9359-3EF61EC91D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B48D4BFD-10D6-4EB1-9359-3EF61EC91D7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

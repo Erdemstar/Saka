@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insecure-direct-object-reference-download-file.Mvc", "insecure-direct-object-reference-download-file.Mvc\insecure-direct-object-reference-download-file.Mvc.csproj", "{5B2CC127-C21E-4872-9795-0CD01992A715}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insecure-direct-object-reference-download-file.Core", "insecure-direct-object-reference-download-file.Core\insecure-direct-object-reference-download-file.Core.csproj", "{B79AF2E0-10FC-445C-A355-5BE40A75CB2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insecure-direct-object-reference-download-file.Infrastructure", "insecure-direct-object-reference-download-file.Infrastructure\insecure-direct-object-reference-download-file.Infrastructure.csproj", "{EBFE5993-D5CE-434D-82B3-F6513216BD2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B2CC127-C21E-4872-9795-0CD01992A715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B2CC127-C21E-4872-9795-0CD01992A715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B2CC127-C21E-4872-9795-0CD01992A715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B2CC127-C21E-4872-9795-0CD01992A715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B79AF2E0-10FC-445C-A355-5BE40A75CB2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B79AF2E0-10FC-445C-A355-5BE40A75CB2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B79AF2E0-10FC-445C-A355-5BE40A75CB2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B79AF2E0-10FC-445C-A355-5BE40A75CB2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBFE5993-D5CE-434D-82B3-F6513216BD2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBFE5993-D5CE-434D-82B3-F6513216BD2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBFE5993-D5CE-434D-82B3-F6513216BD2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBFE5993-D5CE-434D-82B3-F6513216BD2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

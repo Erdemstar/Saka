@@ -1,0 +1,58 @@
+﻿@model insecure_direct_object_reference_download_file.Core.Entity.Account.AccountEntity
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+
+            <h1>Profile</h1>
+
+            <form method="post" action="/Home/Attack" enctype="multipart/form-data">
+
+                <input type="text" name="id" value="@Model.Id" hidden="hidden"/>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Email</label>
+                        <input type="email" class="form-control" name="email" value="@Model.Email">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" value="@Model.Password">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="name" value="@Model.Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Lastname</label>
+                        <input type="text" class="form-control" name="lastname" value="@Model.Lastname">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-control" name="address" value="@Model.Address">
+                </div>
+                <div class="form-group">
+                    <label>Hobby</label>
+                    <input type="text" class="form-control" name="hobby" value="@Model.Hobby">
+                </div>
+
+            </form>
+            
+            <a class="nav-link" asp-controller="Home" asp-action="Attack" asp-route-email="@Model.Email">Download Profile<span class="sr-only"></span></a>
+
+        </div>
+
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

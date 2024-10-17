@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+            <div>
+                <form method="post" action="/Home/Attack" enctype="multipart/form-data">
+                    <div class="input-group">
+                      <select name="type" class="custom-select" id="inputGroupSelect04" aria-label="Select your input type">
+                        <option selected value="primary">Primary...</option>
+                        <option value="secondary">Secondary</option>
+                          <option value="success">Success</option>
+                          <option value="danger">Danger</option>
+                          <option value="warning">Warning</option>
+                          <option value="light">Light</option>
+                          <option value="dark">Dark</option>
+                          
+                      </select>
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit">Submit</button>
+                      </div>
+                    </div>
+                </form>
+            </div>
+            
+            <div style="margin-top: 5%">
+               
+                    <div class="alert alert-@Html.Raw(ViewBag.type)" role="alert">
+                        Hello guys
+                    </div>
+            </div>
+            
+        </div>
+
+
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

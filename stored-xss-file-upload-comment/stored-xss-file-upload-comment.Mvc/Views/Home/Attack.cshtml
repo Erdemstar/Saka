@@ -1,0 +1,61 @@
+﻿@model IEnumerable<stored_xss_file_upload.Core.Entity.DTO.Csv.Response.ResponseCsvDTO>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+            <div>
+                <h2>Enter Comment via CSV File</h2>
+                <form action="/Home/Attack" enctype="multipart/form-data" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="submit">Upload</button>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" name="csvFile" id="csvFile" aria-describedby="csvFile">
+                            <label class="custom-file-label" for="csvFile">Choose file</label>
+                        </div>
+                    </div>
+                    <a href="~/files/sample.csv" class="download-link" download>Sample CSV File</a>
+                </form>
+            </div>
+
+            <div style="margin-top:5%">
+                @if (Model != null && Model.Any())
+                {
+                    <h3>Comments</h3>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Comment</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                <td>@Html.Raw(item.Comment)</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <p>There is no any file uploaded.</p>
+                }
+
+            </div>
+
+        </div>
+
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

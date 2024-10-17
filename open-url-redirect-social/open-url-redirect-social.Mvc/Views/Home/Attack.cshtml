@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+
+            <div>
+                <h2>You can visit our Social Media pages.</h2>
+                <form action="/Home/Attack" method="get" enctype="multipart/form-data">
+                    <div class="input-group">
+                        <select class="custom-select" id="social-media" name="url">
+                            <option value="https://facebook.com/saka" selected>Facebook</option>
+                            <option value="https://instagram.com/saka">Instagram</option>
+                            <option value="https://twitter.com/saka">Twitter</option>
+                        </select>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit">Follow us</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

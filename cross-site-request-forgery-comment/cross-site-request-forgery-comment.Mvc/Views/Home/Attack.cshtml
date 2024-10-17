@@ -1,0 +1,64 @@
+﻿@model IEnumerable<cross_site_request_forgery_comment.Core.Entity.View.AccountComment.AccountCommentViewEntity>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+
+            <div>
+                <img src="/images/saka.jpg" class="img-fluid" alt=""/>
+            </div>
+
+
+            <div>
+                <h2>Last Comments</h2>
+                @if (Model is not null)
+                {
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Firstname - Lastname</th>
+                            <th scope="col">Comment</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            @foreach (var comment in Model)
+                            {
+                                <tr>
+                                <td>@comment.AccountEntity.Name @comment.AccountEntity.Lastname</td>
+                                <td>@comment.CommentEntity.Comment</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+
+            <div style="margin-top: 10%; margin-bottom: 10%">
+                <h2>Add new Comment</h2>
+                <form method="post" enctype="multipart/form-data" action="/Home/Attack">
+                    <div class="form-group row">
+                        <label for="comment" class="col-sm-2 col-form-label">Comment</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="comment" name="comment">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Send Comment</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

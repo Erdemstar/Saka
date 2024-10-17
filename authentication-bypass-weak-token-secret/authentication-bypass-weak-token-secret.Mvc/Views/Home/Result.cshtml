@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+            
+            <div>
+                @if (ViewBag.role != null)
+                {
+                    if (ViewBag.role == "User")
+                    {
+                        <h1>Hello budy</h1>
+                    }
+                    else if (ViewBag.role == "Admin")
+                    {
+                        <h1>Man you do this</h1>
+                    }
+                    else
+                    {
+                        <p>Find a way and try to be admin user</p>
+                    }
+                }
+                else
+                {
+                    <p>Find a way and try to be admin user</p>
+                }
+            </div>
+
+        </div>
+
+
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

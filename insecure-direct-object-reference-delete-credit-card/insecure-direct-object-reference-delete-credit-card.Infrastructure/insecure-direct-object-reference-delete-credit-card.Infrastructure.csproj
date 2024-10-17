@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>insecure_direct_object_reference_delete_credit_card.Infrastructure</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\insecure-direct-object-reference-delete-credit-card.Core\insecure-direct-object-reference-delete-credit-card.Core.csproj" />
+    </ItemGroup>
+
+</Project>

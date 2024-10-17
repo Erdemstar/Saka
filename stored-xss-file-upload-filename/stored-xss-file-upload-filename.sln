@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stored-xss-file-upload-filename.Mvc", "stored-xss-file-upload-filename.Mvc\stored-xss-file-upload-filename.Mvc.csproj", "{673FEBEB-26BE-4836-9637-CE845177A465}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stored-xss-file-upload-filename.Core", "stored-xss-file-upload-filename.Core\stored-xss-file-upload-filename.Core.csproj", "{DEDDF682-0CDB-482B-8F49-A44D99B3FCA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stored-xss-file-upload-filename.Infrastructure", "stored-xss-file-upload-filename.Infrastructure\stored-xss-file-upload-filename.Infrastructure.csproj", "{26865513-031E-4756-ABBE-50B758072DC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{673FEBEB-26BE-4836-9637-CE845177A465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{673FEBEB-26BE-4836-9637-CE845177A465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{673FEBEB-26BE-4836-9637-CE845177A465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{673FEBEB-26BE-4836-9637-CE845177A465}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEDDF682-0CDB-482B-8F49-A44D99B3FCA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEDDF682-0CDB-482B-8F49-A44D99B3FCA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEDDF682-0CDB-482B-8F49-A44D99B3FCA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEDDF682-0CDB-482B-8F49-A44D99B3FCA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26865513-031E-4756-ABBE-50B758072DC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26865513-031E-4756-ABBE-50B758072DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26865513-031E-4756-ABBE-50B758072DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26865513-031E-4756-ABBE-50B758072DC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

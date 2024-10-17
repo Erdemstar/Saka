@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+            <div>
+                <h2>Only JPG and PNG files are allowed</h2>
+                <form action="/Home/Attack" enctype="multipart/form-data" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="submit">Upload</button>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" name="file" id="file" aria-describedby="file">
+                            <label class="custom-file-label" for="file">Choose file</label>
+                        </div>
+                    </div>
+                    <a href="~/uploads/saka.png" class="download-link" download>Sample PNG File</a>
+                </form>
+            </div>
+
+            <div style="margin-top:5%">
+                @if (string.IsNullOrEmpty(ViewBag.Message) == false)
+                {
+                    <p>@ViewBag.Message</p>
+                }
+            </div>
+
+        </div>
+
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin-top: 10%;">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+
+            <h2>Have I been pwned ?</h2>
+            <form method="post" action="/Home/Attack">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Email address</label>
+                    <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+
+            <div style="margin-top: 5%">
+                @if (string.IsNullOrEmpty(ViewBag.email) == false)
+                {
+                    if (ViewBag.random % 2 == 0)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            <h4 class="alert-heading">PWN !!!</h4>
+                            <p>Your email address is @Html.Raw(ViewBag.email) PWN !!!!</p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-success" role="alert">
+                            <h4 class="alert-heading">Well done!</h4>
+                            <p>Your email address is @Html.Raw(ViewBag.email) clear.</p>
+                        </div>
+                    }
+                }
+            </div>
+
+        </div>
+
+
+        <div class="col-md-2"></div>
+    </div>
+
+</div>

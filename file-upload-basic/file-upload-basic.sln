@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "file-upload-basic.Mvc", "file-upload-basic.Mvc\file-upload-basic.Mvc.csproj", "{3E11E356-F5D1-48B6-B6C1-6455DFF179ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E11E356-F5D1-48B6-B6C1-6455DFF179ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E11E356-F5D1-48B6-B6C1-6455DFF179ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E11E356-F5D1-48B6-B6C1-6455DFF179ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E11E356-F5D1-48B6-B6C1-6455DFF179ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

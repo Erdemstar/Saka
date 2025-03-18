@@ -39,11 +39,11 @@ public class HomeController : Controller
         {
             fileEntity.Content = System.IO.File.Exists(filePath)
                 ? System.IO.File.ReadAllText(filePath)
-                : "Dosya mevcut değil.";
+                : "File is not exist.";
         }
         catch (Exception ex)
         {
-            fileEntity.Content = $"Dosya okunurken bir hata oluştu: {ex.Message}";
+            fileEntity.Content = $"There is a problem while file reading: {ex.Message}";
         }
 
         return View(fileEntity);

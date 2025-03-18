@@ -9,17 +9,15 @@
             <b>CSS Injection - Input</b>
         </h1>
         <p>
-
-            <b>Hello Warrior, </b>today's challenge is to explore how the application handles filenames by inputting unexpected values.
-            Your goal is to manipulate the filename field to reveal information beyond what is intended. By clicking the button below, you'll be directed to
-            the page where you can start your mission. We've provided 3 hints to assist you if you encounter any difficulties. Good luck.
+            <b>Hello Warrior, </b>today we expect you to exploit the application by using the dropdown button feature to
+            change the page's design in an unexpected way. By clicking the button below, we can quickly direct you to the
+            relevant page. We have left 3 tips to help you in case you get stuck during your studies. Good luck!
         </p>
         <p>
             <a class="btn btn-primary btn-lg" asp-action="Attack" role="button">Let's start &raquo;</a>
         </p>
     </div>
 </div>
-
 
 <div class="container" style="padding-top: 5%; margin-bottom: 5%">
     <!-- Button trigger groups -->
@@ -55,7 +53,6 @@
     <!-- Modals data -->
     <div>
         <!-- Modal 1 -->
-
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -76,7 +73,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
-                        You can create payload using these ".", "..", "../", "..//", "..////", "..%2f", "%00"
+                        You can create payload using these "<", ">", "h1", "img", "src", "onerror", "alert" .
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -91,8 +88,8 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
-                        You can read /etc/passwd "../../../../../../../../etc/passwd%00". Other than that, it may
-                        be useful to review <a href="https://github.com/payloadbox/rfi-lfi-payload-list" target="_blank">Link</a>
+                        You can run javascript by typing &#x3C;img src=x onerror=alert(1)&#x3E;. Other than that, it may
+                        be useful to review <a href="https://github.com/payloadbox/xss-payload-list" target="_blank">Link</a>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

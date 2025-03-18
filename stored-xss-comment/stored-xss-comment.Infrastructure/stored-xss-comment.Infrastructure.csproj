@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\stored-xss-comment.Core\stored-xss-comment.Core.csproj" />
+        <ProjectReference Include="..\stored-xss-comment.Core\stored-xss-comment.Core.csproj"/>
     </ItemGroup>
 
 </Project>

@@ -19,9 +19,8 @@ public class HomeController : Controller
 
     public IActionResult Attack(string filename)
     {
-        
         if (string.IsNullOrEmpty(filename)) filename = "sample.txt";
-        
+
         var fileEntity = new FileEntity
         {
             Name = "wwwroot/files/" + filename
@@ -33,11 +32,11 @@ public class HomeController : Controller
         {
             fileEntity.Content = System.IO.File.Exists(filePath)
                 ? System.IO.File.ReadAllText(filePath)
-                : "Dosya mevcut değil.";
+                : "File is not exist.";
         }
         catch (Exception ex)
         {
-            fileEntity.Content = $"Dosya okunurken bir hata oluştu: {ex.Message}";
+            fileEntity.Content = $"There is a problem while file reading: {ex.Message}";
         }
 
         return View(fileEntity);

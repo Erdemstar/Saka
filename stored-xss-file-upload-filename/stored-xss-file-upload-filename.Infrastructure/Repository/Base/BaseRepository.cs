@@ -3,7 +3,6 @@ using stored_xss_file_upload_filename.Core.Data;
 using stored_xss_file_upload_filename.Core.Entity.Base;
 using stored_xss_file_upload_filename.Core.Interface.Repository.Base;
 
-
 namespace stored_xss_file_upload_filename.Infrastructure.Repository.Base;
 
 public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity

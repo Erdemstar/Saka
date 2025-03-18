@@ -17,22 +17,30 @@ public class HomeController : Controller
         return View();
     }
 
+
     [HttpGet]
     public IActionResult Attack()
     {
-        ViewBag.type = "primary";
+        ViewBag.color = "black";
+        ViewBag.tag = "h1";
+
         return View();
     }
 
     [HttpPost]
     public IActionResult Attack(IFormCollection form)
     {
-        var type = form["type"].ToString();
-        if (string.IsNullOrEmpty(type))
-            type = "primary";
+        var color = form["color"].ToString();
+        var tag = form["tag"].ToString();
+        if (string.IsNullOrEmpty(color))
+            color = "black";
 
-        ViewBag.type = type;
-        
+        if (string.IsNullOrEmpty(tag))
+            tag = "h1";
+
+        ViewBag.color = color;
+        ViewBag.tag = tag;
+
         return View();
     }
 }
